@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #carousel{
+        margin-bottom: 20px;
+    }
+    #carousel>img{
+        width:70%;
+        height:500px;
+        display:flex;
+        justify-content: center;
+        margin: auto;
+    }
+    #movies{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        margin:3%;
+        justify-content: center;
+    }
+    #loader_div{
+        display:none;
+    }
+    body{
+        margin:0;
+        padding:0;
+    }
+    #navbar{
+        width:100%;
+        height:70px;
+        display:flex;
+        justify-content: space-around;
+        background-color:#0f1014 ;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    #navbar>p{
+        font-size: 30px;
+        justify-content: center;
+        align-content: center;
+        color: white;
+    }
+
+</style>
+<body>
+    <div id="navbar">
+        <p>Home</p>
+        <p>TV</p>
+        <p>Movies</p>
+        <p>Sports</p>
+    </div>
+    <h1 align="center">hotstar</h1>
+    <div id="carousel"></div>
+    <input type="text" oninput="debounce(searchMovies,1000)" id="movie_name">
+    <div id="loader_div">
+        <img src="https://res.cloudinary.com/bytesizedpieces/image/upload/v1656084931/article/a-how-to-guide-on-making-an-animated-loading-image-for-a-website/animated_loader_gif_n6b5x0.gif">
+    </div>
+    <div id="movies"></div>
+</body>
+</html>
+<script src="search.js"></script>
